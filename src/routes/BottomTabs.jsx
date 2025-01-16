@@ -1,7 +1,11 @@
-import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import FeedScreen from '../screens/feedScreen/FeedScreen';
 import {Image} from 'react-native';
+import FeedScreen from '../screens/feedScreen/FeedScreen';
+import PdpScreen from '../screens/pdpScreen/PdpScreen';
+import PerfilScreen from '../screens/perfilScreen/PerfilScreen';
+import RankingScreen from '../screens/rankingScreen/RankingScreen';
+import CarteiraScreen from '../screens/carteiraScreen/CarteiraScreen';
+import {CARTERIA, FEED, PDP, PERFIL, RANKING} from '../utils/routes';
 
 const Tab = createBottomTabNavigator();
 
@@ -11,70 +15,74 @@ const BottomTabs = () => {
       screenOptions={{
         tabBarStyle: {
           backgroundColor: 'black',
-          paddingBottom: 10,
         },
+        tabBarActiveTintColor: 'white',
+        tabBarInactiveTintColor: '#7d7d7d',
+        headerShown: false,
       }}>
       <Tab.Screen
-        name="Feed"
+        name={FEED}
         component={FeedScreen}
         options={{
           tabBarLabel: '',
           tabBarIcon: () => (
             <Image
               source={require('../assets/images/logo.png')}
-              style={{width: 28, height: 29, marginTop: 5}}
+              style={{width: 26, height: 29, marginTop: 15}}
             />
           ),
         }}
       />
+
       <Tab.Screen
-        name="Explore"
-        component={FeedScreen}
+        name={PDP}
+        component={PdpScreen}
         options={{
           tabBarLabel: '',
           tabBarIcon: () => (
             <Image
               source={require('../assets/images/wallet.png')}
-              style={{width: 40, height: 40, marginTop: 5}}
+              style={{width: 40, height: 40, marginTop: 15}}
             />
           ),
         }}
       />
       <Tab.Screen
-        name="Notifications"
-        component={FeedScreen}
+        name={CARTERIA}
+        component={CarteiraScreen}
         options={{
           tabBarLabel: '',
           tabBarIcon: () => (
             <Image
               source={require('../assets/images/Frame.png')}
-              style={{width: 40, height: 40, marginTop: 5}}
+              style={{width: 40, height: 40, marginTop: 15}}
             />
           ),
         }}
       />
+
       <Tab.Screen
-        name="Messages"
-        component={FeedScreen}
+        name={RANKING}
+        component={RankingScreen}
         options={{
           tabBarLabel: '',
           tabBarIcon: () => (
             <Image
               source={require('../assets/images/rank.png')}
-              style={{width: 40, height: 40, marginTop: 5}}
+              style={{width: 40, height: 40, marginTop: 15}}
             />
           ),
         }}
       />
       <Tab.Screen
-        name="Profile"
-        component={FeedScreen}
+        name={PERFIL}
+        component={PerfilScreen}
         options={{
           tabBarLabel: '',
           tabBarIcon: () => (
             <Image
               source={require('../assets/images/user.png')}
-              style={{width: 40, height: 40, marginTop: 5}}
+              style={{width: 40, height: 40, marginTop: 15}}
             />
           ),
         }}
