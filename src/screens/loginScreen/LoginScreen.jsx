@@ -11,9 +11,13 @@ import LoginStyle from '../../styles/LoginStyle';
 import {Profile} from '../../assets/icons/Profile';
 import {Password} from '../../assets/icons/Password';
 
-const LoginScreen = () => {
+const LoginScreen = ({navigation}) => {
   const [isFocusedLogin, setIsFocusedLogin] = useState(false);
   const [isFocusedPassword, setIsFocusedPassword] = useState(false);
+
+  const handleLogin = () => {
+    navigation.navigate('BottomTabs');
+  };
 
   return (
     <ImageBackground
@@ -38,30 +42,29 @@ const LoginScreen = () => {
       </View>
 
       <View style={LoginStyle.formContainer}>
-        <View style={LoginStyle.inputContainer}>
+        <View
+          style={[
+            LoginStyle.inputContainer,
+            isFocusedLogin && LoginStyle.inputContainerFocused,
+          ]}>
           <Profile style={LoginStyle.icon} />
           <TextInput
-            style={[
-              LoginStyle.input,
-              isFocusedLogin
-                ? LoginStyle.inputFocused
-                : LoginStyle.inputDefault,
-            ]}
+            style={LoginStyle.input}
             placeholder="Login"
             placeholderTextColor="#7d7d7d"
             onFocus={() => setIsFocusedLogin(true)}
             onBlur={() => setIsFocusedLogin(false)}
           />
         </View>
-        <View style={LoginStyle.inputContainer}>
+
+        <View
+          style={[
+            LoginStyle.inputContainer,
+            isFocusedPassword && LoginStyle.inputContainerFocused,
+          ]}>
           <Password style={LoginStyle.icon} />
           <TextInput
-            style={[
-              LoginStyle.input,
-              isFocusedPassword
-                ? LoginStyle.inputFocused
-                : LoginStyle.inputDefault,
-            ]}
+            style={LoginStyle.input}
             placeholder="Password"
             placeholderTextColor="#7d7d7d"
             secureTextEntry={true}
@@ -69,10 +72,11 @@ const LoginScreen = () => {
             onBlur={() => setIsFocusedPassword(false)}
           />
         </View>
+
         <Text style={LoginStyle.forgotPassword}>Lost password?</Text>
       </View>
 
-      <TouchableOpacity style={LoginStyle.button}>
+      <TouchableOpacity style={LoginStyle.button} onPress={handleLogin}>
         <Text style={LoginStyle.buttonText}>Login</Text>
       </TouchableOpacity>
     </ImageBackground>

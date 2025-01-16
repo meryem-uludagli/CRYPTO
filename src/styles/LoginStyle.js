@@ -49,21 +49,20 @@ const LoginStyle = StyleSheet.create({
     position: 'relative',
     top: 30,
   },
+  inputContainerFocused: {
+    borderColor: '#915eff',
+    borderWidth: 2,
+  },
   input: {
     flex: 1,
     color: '#ffffff',
     fontSize: 16,
     paddingVertical: 15,
   },
-  inputFocused: {
-    borderColor: '#915eff',
-  },
-  inputDefault: {
-    borderColor: '#1c1c1e',
-  },
   icon: {
     marginRight: 10,
   },
+
   forgotPassword: {
     color: '#915eff',
     textAlign: 'right',
