@@ -18,11 +18,19 @@ const LoginStyle = StyleSheet.create({
     width: 33,
     height: 45,
     marginRight: 10,
+    top: 12,
   },
-  text: {
-    fontSize: 24,
+  crypto: {
+    fontSize: 28,
     fontWeight: 'bold',
     color: '#ffffff',
+    top: 12,
+  },
+  text: {
+    fontSize: 42,
+    fontWeight: 'bold',
+    color: '#ffffff',
+    bottom: 60,
   },
   span: {
     color: '#915eff',
@@ -30,30 +38,44 @@ const LoginStyle = StyleSheet.create({
   formContainer: {
     marginTop: 30,
   },
-  input: {
-    backgroundColor: '#0b0b0d',
-    padding: 15,
+  inputContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
     borderRadius: 50,
-    marginBottom: 15,
-    color: '#ffffff',
-    fontSize: 16,
     borderWidth: 1,
     borderColor: '#1c1c1e',
+    marginBottom: 15,
+    paddingHorizontal: 15,
+    position: 'relative',
+    top: 30,
+  },
+  input: {
+    flex: 1,
+    color: '#ffffff',
+    fontSize: 16,
+    paddingVertical: 15,
   },
   inputFocused: {
     borderColor: '#915eff',
   },
-
+  inputDefault: {
+    borderColor: '#1c1c1e',
+  },
+  icon: {
+    marginRight: 10,
+  },
   forgotPassword: {
     color: '#915eff',
     textAlign: 'right',
     marginBottom: 20,
+    top: 30,
   },
   button: {
     backgroundColor: '#915eff',
     padding: 15,
     borderRadius: 50,
     alignItems: 'center',
+    top: 190,
   },
   buttonText: {
     color: '#ffffff',
