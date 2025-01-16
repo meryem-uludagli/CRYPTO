@@ -5,9 +5,9 @@ import {
   ImageBackground,
   TouchableOpacity,
   TextInput,
-  ScrollView,
   Text,
   FlatList,
+  ScrollView,
 } from 'react-native';
 import FeedStyle from '../../styles/FeedStyle';
 import {Hambug} from '../../assets/icons/Hambug';
@@ -15,25 +15,24 @@ import {Search} from '../../assets/icons/Search';
 
 const FeedScreen = () => {
   const categories = ['All', '3D', '2D', 'GIFs', 'Illustration', 'ETH'];
-
   const items = [
     {
       id: '1',
       image: require('../../assets/images/NFT.png'),
-      owner: 'Jason',
-      price: '1.2 ETH',
+      owner: 'User1',
+      price: '1.5 ETH',
     },
     {
       id: '2',
       image: require('../../assets/images/NFT2.png'),
-      owner: 'Alice',
-      price: '2 ETH',
+      owner: 'User2',
+      price: '0.8 ETH',
     },
     {
       id: '3',
       image: require('../../assets/images/NFT3.png'),
-      owner: 'Derek',
-      price: '0.2 ETH',
+      owner: 'User3',
+      price: '3.2 ETH',
     },
   ];
 
@@ -52,49 +51,51 @@ const FeedScreen = () => {
       source={require('../../assets/images/bg.jpg')}
       style={FeedStyle.container}
       resizeMode="cover">
-      <ScrollView contentContainerStyle={{paddingBottom: 20}}>
-        {/* Logo */}
-        <View style={FeedStyle.logoContainer}>
-          <Image
-            style={FeedStyle.logo}
-            source={require('../../assets/images/logo.png')}
-          />
-        </View>
-
-        {/* Hamburger Icon */}
-        <View style={FeedStyle.hamburgerContainer}>
-          <Hambug />
-        </View>
-
-        {/* Search Bar */}
-        <TouchableOpacity style={FeedStyle.searchButton}>
-          <View style={FeedStyle.searchInputContainer}>
-            <TextInput
-              placeholder="Search for..."
-              placeholderTextColor="#fff"
-              style={FeedStyle.searchInput}
-            />
-            <Search style={FeedStyle.searchIcon} />
-          </View>
-        </TouchableOpacity>
-
-        {/* Categories */}
-        <View style={FeedStyle.categoriesContainer}>
-          {categories.map((category, index) => (
-            <TouchableOpacity key={index} style={FeedStyle.category}>
-              <Text style={FeedStyle.categoryText}>{category}</Text>
-            </TouchableOpacity>
-          ))}
-        </View>
-
-        {/* Item Cards */}
-        <FlatList
-          data={items}
-          renderItem={renderItem}
-          keyExtractor={item => item.id}
-          contentContainerStyle={FeedStyle.cardList}
+      {/* Logo */}
+      <View style={FeedStyle.logoContainer}>
+        <Image
+          style={FeedStyle.logo}
+          source={require('../../assets/images/logo.png')}
         />
+      </View>
+
+      {/* Hamburger Icon */}
+      <View style={FeedStyle.hamburgerContainer}>
+        <Hambug />
+      </View>
+
+      {/* Search Bar */}
+      <TouchableOpacity style={FeedStyle.searchButton}>
+        <View style={FeedStyle.searchInputContainer}>
+          <TextInput
+            placeholder="Search for..."
+            placeholderTextColor="#fff"
+            style={FeedStyle.searchInput}
+          />
+          <Search style={FeedStyle.searchIcon} />
+        </View>
+      </TouchableOpacity>
+
+      {/* Categories */}
+      <ScrollView
+        horizontal
+        showsHorizontalScrollIndicator={false}
+        contentContainerStyle={FeedStyle.categoriesContainer}>
+        {categories.map((category, index) => (
+          <TouchableOpacity key={index} style={FeedStyle.category}>
+            <Text style={FeedStyle.categoryText}>{category}</Text>
+          </TouchableOpacity>
+        ))}
       </ScrollView>
+
+      {/* Item Cards */}
+      <FlatList
+        data={items}
+        renderItem={renderItem}
+        keyExtractor={item => item.id}
+        contentContainerStyle={FeedStyle.cardList}
+        showsVerticalScrollIndicator={false}
+      />
     </ImageBackground>
   );
 };

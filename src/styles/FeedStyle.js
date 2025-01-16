@@ -3,7 +3,6 @@ import {StyleSheet} from 'react-native';
 const FeedStyle = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#000',
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -11,8 +10,6 @@ const FeedStyle = StyleSheet.create({
     position: 'absolute',
     top: 20,
     left: 20,
-    marginTop: 50,
-    alignItems: 'center',
   },
   logo: {
     width: 33,
@@ -20,7 +17,7 @@ const FeedStyle = StyleSheet.create({
   },
   hamburgerContainer: {
     position: 'absolute',
-    top: 50,
+    top: 20,
     right: 20,
   },
   searchButton: {
@@ -28,16 +25,14 @@ const FeedStyle = StyleSheet.create({
     top: 100,
     width: '100%',
     alignItems: 'center',
-    marginTop: 20,
-    paddingHorizontal: 20,
   },
   searchInputContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: '#222',
-    borderRadius: 50,
-    padding: 10,
-    width: '85%',
+    backgroundColor: 'black',
+    borderRadius: 30,
+    paddingHorizontal: 10,
+    width: '80%',
     height: 50,
   },
   searchInput: {
@@ -47,7 +42,6 @@ const FeedStyle = StyleSheet.create({
     color: '#fff',
   },
   searchIcon: {
-    marginLeft: 10,
     position: 'absolute',
     left: 10,
     width: 20,
@@ -76,17 +70,18 @@ const FeedStyle = StyleSheet.create({
     fontWeight: '500',
   },
   cardList: {
-    paddingHorizontal: 20,
-    marginTop: 20,
+    paddingHorizontal: 15,
   },
   card: {
+    width: '100%',
     backgroundColor: '#222',
     borderRadius: 15,
     overflow: 'hidden',
-    marginBottom: 20,
+    marginBottom: 15,
+    top: 180,
   },
   cardImage: {
-    width: '100%',
+    width: 400,
     height: 200,
   },
   cardInfo: {
@@ -94,11 +89,12 @@ const FeedStyle = StyleSheet.create({
   },
   cardOwner: {
     color: '#fff',
-    fontSize: 14,
+    fontSize: 12,
+    fontWeight: '500',
   },
   cardPrice: {
     color: '#fff',
-    fontSize: 16,
+    fontSize: 14,
     fontWeight: 'bold',
     marginTop: 5,
   },
