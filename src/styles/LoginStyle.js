@@ -18,13 +18,13 @@ const LoginStyle = StyleSheet.create({
     width: 33,
     height: 45,
     marginRight: 10,
-    top: 12,
+    top: 55,
   },
   crypto: {
     fontSize: 28,
     fontWeight: 'bold',
     color: '#ffffff',
-    top: 12,
+    top: 55,
   },
   text: {
     fontSize: 42,

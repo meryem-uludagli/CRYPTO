@@ -18,7 +18,7 @@ const BottomTabs = () => {
         },
         tabBarActiveTintColor: 'white',
         tabBarInactiveTintColor: '#7d7d7d',
-        headerShown: false,
+        headerShown: false, // Burada header'ı tüm ekranlarda gizliyoruz.
       }}>
       <Tab.Screen
         name={FEED}

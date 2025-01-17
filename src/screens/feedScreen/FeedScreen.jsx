@@ -51,51 +51,55 @@ const FeedScreen = () => {
       source={require('../../assets/images/bg.jpg')}
       style={FeedStyle.container}
       resizeMode="cover">
-      {/* Logo */}
-      <View style={FeedStyle.logoContainer}>
-        <Image
-          style={FeedStyle.logo}
-          source={require('../../assets/images/logo.png')}
-        />
-      </View>
-
-      {/* Hamburger Icon */}
-      <View style={FeedStyle.hamburgerContainer}>
-        <Hambug />
-      </View>
-
-      {/* Search Bar */}
-      <TouchableOpacity style={FeedStyle.searchButton}>
-        <View style={FeedStyle.searchInputContainer}>
-          <TextInput
-            placeholder="Search for..."
-            placeholderTextColor="#fff"
-            style={FeedStyle.searchInput}
-          />
-          <Search style={FeedStyle.searchIcon} />
-        </View>
-      </TouchableOpacity>
-
-      {/* Categories */}
       <ScrollView
-        horizontal
-        showsHorizontalScrollIndicator={false}
-        contentContainerStyle={FeedStyle.categoriesContainer}>
-        {categories.map((category, index) => (
-          <TouchableOpacity key={index} style={FeedStyle.category}>
-            <Text style={FeedStyle.categoryText}>{category}</Text>
-          </TouchableOpacity>
-        ))}
-      </ScrollView>
+        contentContainerStyle={{flexGrow: 1}} // İçeriğin tam ekran sığmasını sağlar
+        showsVerticalScrollIndicator={false}>
+        {/* Logo */}
+        <View style={FeedStyle.logoContainer}>
+          <Image
+            style={FeedStyle.logo}
+            source={require('../../assets/images/logo.png')}
+          />
+        </View>
 
-      {/* Item Cards */}
-      <FlatList
-        data={items}
-        renderItem={renderItem}
-        keyExtractor={item => item.id}
-        contentContainerStyle={FeedStyle.cardList}
-        showsVerticalScrollIndicator={false}
-      />
+        {/* Hamburger Icon */}
+        <View style={FeedStyle.hamburgerContainer}>
+          <Hambug />
+        </View>
+
+        {/* Search Bar */}
+        <TouchableOpacity style={FeedStyle.searchButton}>
+          <View style={FeedStyle.searchInputContainer}>
+            <TextInput
+              placeholder="Search for..."
+              placeholderTextColor="#fff"
+              style={FeedStyle.searchInput}
+            />
+            <Search style={FeedStyle.searchIcon} />
+          </View>
+        </TouchableOpacity>
+
+        {/* Categories */}
+        <ScrollView
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          contentContainerStyle={FeedStyle.categoriesContainer}>
+          {categories.map((category, index) => (
+            <TouchableOpacity key={index} style={FeedStyle.category}>
+              <Text style={FeedStyle.categoryText}>{category}</Text>
+            </TouchableOpacity>
+          ))}
+        </ScrollView>
+
+        {/* Item Cards */}
+        <FlatList
+          data={items}
+          renderItem={renderItem}
+          keyExtractor={item => item.id}
+          scrollEnabled={false} // FlatList'in kendi kaydırma özelliğini kapatıyoruz
+          contentContainerStyle={FeedStyle.cardList}
+        />
+      </ScrollView>
     </ImageBackground>
   );
 };
