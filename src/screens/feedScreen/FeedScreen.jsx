@@ -7,7 +7,6 @@ import {
   TextInput,
   Text,
   FlatList,
-  ScrollView,
 } from 'react-native';
 import FeedStyle from '../../styles/FeedStyle';
 import {Hambug} from '../../assets/icons/Hambug';
@@ -15,26 +14,33 @@ import {Search} from '../../assets/icons/Search';
 
 const FeedScreen = () => {
   const categories = ['All', '3D', '2D', 'GIFs', 'Illustration', 'ETH'];
+
   const items = [
     {
       id: '1',
       image: require('../../assets/images/NFT.png'),
-      owner: 'User1',
-      price: '1.5 ETH',
+      owner: 'Jason',
+      price: '1.2 ETH',
     },
     {
       id: '2',
       image: require('../../assets/images/NFT2.png'),
-      owner: 'User2',
-      price: '0.8 ETH',
+      owner: 'Alice',
+      price: '2 ETH',
     },
     {
       id: '3',
       image: require('../../assets/images/NFT3.png'),
-      owner: 'User3',
-      price: '3.2 ETH',
+      owner: 'Derek',
+      price: '0.2 ETH',
     },
   ];
+
+  const renderCategory = ({item}) => (
+    <TouchableOpacity style={FeedStyle.category}>
+      <Text style={FeedStyle.categoryText}>{item}</Text>
+    </TouchableOpacity>
+  );
 
   const renderItem = ({item}) => (
     <View style={FeedStyle.card}>
@@ -46,60 +52,58 @@ const FeedScreen = () => {
     </View>
   );
 
+  const renderHeader = () => (
+    <View style={FeedStyle.header}>
+      {/* Logo */}
+      <View style={FeedStyle.logoContainer}>
+        <Image
+          style={FeedStyle.logo}
+          source={require('../../assets/images/logo.png')}
+        />
+      </View>
+
+      {/* Hamburger Icon */}
+      <View style={FeedStyle.hamburgerContainer}>
+        <Hambug />
+      </View>
+
+      {/* Search Bar */}
+      <TouchableOpacity style={FeedStyle.searchButton}>
+        <View style={FeedStyle.searchInputContainer}>
+          <TextInput
+            placeholder="Search for..."
+            placeholderTextColor="#fff"
+            style={FeedStyle.searchInput}
+          />
+          <Search style={FeedStyle.searchIcon} />
+        </View>
+      </TouchableOpacity>
+
+      {/* Categories */}
+      <FlatList
+        horizontal
+        showsHorizontalScrollIndicator={false}
+        data={categories}
+        renderItem={renderCategory}
+        keyExtractor={(item, index) => index.toString()}
+        contentContainerStyle={FeedStyle.categoriesContainer}
+      />
+    </View>
+  );
+
   return (
     <ImageBackground
       source={require('../../assets/images/bg.jpg')}
       style={FeedStyle.container}
       resizeMode="cover">
-      <ScrollView
-        contentContainerStyle={{flexGrow: 1}} // İçeriğin tam ekran sığmasını sağlar
-        showsVerticalScrollIndicator={false}>
-        {/* Logo */}
-        <View style={FeedStyle.logoContainer}>
-          <Image
-            style={FeedStyle.logo}
-            source={require('../../assets/images/logo.png')}
-          />
-        </View>
-
-        {/* Hamburger Icon */}
-        <View style={FeedStyle.hamburgerContainer}>
-          <Hambug />
-        </View>
-
-        {/* Search Bar */}
-        <TouchableOpacity style={FeedStyle.searchButton}>
-          <View style={FeedStyle.searchInputContainer}>
-            <TextInput
-              placeholder="Search for..."
-              placeholderTextColor="#fff"
-              style={FeedStyle.searchInput}
-            />
-            <Search style={FeedStyle.searchIcon} />
-          </View>
-        </TouchableOpacity>
-
-        {/* Categories */}
-        <ScrollView
-          horizontal
-          showsHorizontalScrollIndicator={false}
-          contentContainerStyle={FeedStyle.categoriesContainer}>
-          {categories.map((category, index) => (
-            <TouchableOpacity key={index} style={FeedStyle.category}>
-              <Text style={FeedStyle.categoryText}>{category}</Text>
-            </TouchableOpacity>
-          ))}
-        </ScrollView>
-
-        {/* Item Cards */}
-        <FlatList
-          data={items}
-          renderItem={renderItem}
-          keyExtractor={item => item.id}
-          scrollEnabled={false} // FlatList'in kendi kaydırma özelliğini kapatıyoruz
-          contentContainerStyle={FeedStyle.cardList}
-        />
-      </ScrollView>
+      <FlatList
+        data={items}
+        renderItem={renderItem}
+        keyExtractor={item => item.id}
+        ListHeaderComponent={renderHeader}
+        contentContainerStyle={FeedStyle.cardList}
+        ListFooterComponent={<View style={{height: 20}} />}
+      />
     </ImageBackground>
   );
 };
