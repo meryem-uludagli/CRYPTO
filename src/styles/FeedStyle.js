@@ -1,7 +1,5 @@
 import {StyleSheet, Dimensions} from 'react-native';
 
-const {width} = Dimensions.get('window');
-
 const FeedStyle = StyleSheet.create({
   container: {
     flex: 1,
@@ -84,8 +82,9 @@ const FeedStyle = StyleSheet.create({
     overflow: 'hidden',
   },
   cardImage: {
-    width: width - 170,
-    height: 300,
+    width: '%100',
+    height: 450,
+    objectFit: 'cover',
     borderTopLeftRadius: 20,
     borderTopRightRadius: 20,
   },
