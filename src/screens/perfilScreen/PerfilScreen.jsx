@@ -1,10 +1,10 @@
 import {StyleSheet, Text, View} from 'react-native';
-import React from 'react';
+import Header from '../../components/Header';
 
 const PerfilScreen = () => {
   return (
     <View>
-      <Text>PerfilScreen</Text>
+      <Header />
     </View>
   );
 };

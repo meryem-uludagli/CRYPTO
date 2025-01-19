@@ -9,8 +9,8 @@ import {
   FlatList,
 } from 'react-native';
 import FeedStyle from '../../styles/FeedStyle';
-import {Hambug} from '../../assets/icons/Hambug';
 import {Search} from '../../assets/icons/Search';
+import Header from '../../components/Header';
 
 const FeedScreen = () => {
   const categories = ['All', '3D', '2D', 'GIFs', 'Illustration', 'ETH'];
@@ -54,18 +54,7 @@ const FeedScreen = () => {
 
   const renderHeader = () => (
     <View style={FeedStyle.header}>
-      {/* Logo */}
-      <View style={FeedStyle.logoContainer}>
-        <Image
-          style={FeedStyle.logo}
-          source={require('../../assets/images/logo.png')}
-        />
-      </View>
-
-      {/* Hamburger Icon */}
-      <View style={FeedStyle.hamburgerContainer}>
-        <Hambug />
-      </View>
+      <Header />
 
       {/* Search Bar */}
       <TouchableOpacity style={FeedStyle.searchButton}>

@@ -4,7 +4,7 @@ import React from 'react';
 const PdpScreen = () => {
   return (
     <View>
-      <Text>PdpScreen</Text>
+      <Text>PdpScreenrgvfrgvfrgv</Text>
     </View>
   );
 };
