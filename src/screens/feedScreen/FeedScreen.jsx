@@ -11,8 +11,10 @@ import {
 import FeedStyle from '../../styles/FeedStyle';
 import {Search} from '../../assets/icons/Search';
 import Header from '../../components/Header';
+import {useNavigation} from '@react-navigation/native';
 
 const FeedScreen = () => {
+  const navigation = useNavigation();
   const categories = ['All', '3D', '2D', 'GIFs', 'Illustration', 'ETH'];
 
   const items = [
@@ -42,14 +44,16 @@ const FeedScreen = () => {
     </TouchableOpacity>
   );
 
-  const renderItem = ({item}) => (
-    <View style={FeedStyle.card}>
+  const renderItem = ({item, index}) => (
+    <TouchableOpacity
+      style={FeedStyle.card}
+      onPress={() => index === 0 && navigation.navigate('Detail', {item})}>
       <Image source={item.image} style={FeedStyle.cardImage} />
       <View style={FeedStyle.cardInfo}>
         <Text style={FeedStyle.cardOwner}>Owned by {item.owner}</Text>
         <Text style={FeedStyle.cardPrice}>{item.price}</Text>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 
   const renderHeader = () => (

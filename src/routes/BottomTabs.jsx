@@ -4,7 +4,8 @@ import FeedScreen from '../screens/feedScreen/FeedScreen';
 import PerfilScreen from '../screens/perfilScreen/PerfilScreen';
 import RankingScreen from '../screens/rankingScreen/RankingScreen';
 import CarteiraScreen from '../screens/carteiraScreen/CarteiraScreen';
-import {CARTERIA, FEED, PERFIL, RANKING} from '../utils/routes';
+import {CARTERIA, FEED, PERFIL, RANKING, PDP} from '../utils/routes';
+import PdpScreen from '../screens/pdpScreen/PdpScreen';
 
 const Tab = createBottomTabNavigator();
 
@@ -48,17 +49,11 @@ const BottomTabs = () => {
       />
 
       <Tab.Screen
-        name="Frame"
-        component={() => null}
+        name={PDP}
+        component={PdpScreen}
         options={{
           tabBarLabel: '',
           tabBarIcon: () => (
-            <Image
-              source={require('../assets/images/Frame.png')}
-              style={{width: 40, height: 40, marginTop: 15}}
-            />
-          ),
-          tabBarButton: () => (
             <Image
               source={require('../assets/images/Frame.png')}
               style={{width: 40, height: 40, marginTop: 15}}

@@ -3,6 +3,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import LoginScreen from '../screens/loginScreen/LoginScreen';
 import FeedScreen from '../screens/feedScreen/FeedScreen';
 import BottomTabs from '../routes/BottomTabs';
+import Detail from '../screens/Detail';
 
 const Stack = createNativeStackNavigator();
 
@@ -22,6 +23,11 @@ const RootNavigator = () => {
       <Stack.Screen
         name="BottomTabs"
         component={BottomTabs}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="Detail"
+        component={Detail}
         options={{headerShown: false}}
       />
     </Stack.Navigator>
