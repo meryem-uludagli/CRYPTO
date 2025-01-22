@@ -9,6 +9,8 @@ import {
 } from 'react-native';
 import DetailStyle from '../styles/DetailStyle';
 import {Close} from '../assets/icons/Close';
+import Lastbids from '../components/Lastbids';
+
 const Detail = ({route}) => {
   const {item} = route.params;
 
@@ -52,6 +54,7 @@ const Detail = ({route}) => {
           </Text>
         </View>
       </ImageBackground>
+      <Lastbids />
     </ScrollView>
   );
 };
