@@ -1,45 +1,49 @@
 {
-  "nfts": [
-    {
-      "id": 1,
-      "name": "Cryptopus",
-      "owner": "Jason",
-      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry...",
-      "image_url": "/images/cryptopus.png"
-    }
-  ],
   "bids": [
     {
       "id": 1,
-      "nft_id": 1,
-      "bidder_name": "Tony",
-      "bidder_handle": "@honNFT",
-      "bid_amount": 32.3222,
-      "image_url": "/images/tony.png"
+      "name": "Tony",
+      "username": "@jhonNFT",
+      "verified": true,
+      "bidAmount": "32.322,2 ETH",
+      "change": "-20%",
+      "avatar": "./assets/images/Avatar.png"
     },
     {
       "id": 2,
-      "nft_id": 1,
-      "bidder_name": "Alonzo",
-      "bidder_handle": "@honNFT",
-      "bid_amount": 32.3222,
-      "image_url": "/images/alonzo.png"
+      "name": "Alonzo",
+      "username": "@jhonNFT",
+      "verified": true,
+      "bidAmount": "32.322,2 ETH",
+      "change": "-20%",
+      "avatar": "https://example.com/avatar2.png"
     },
     {
       "id": 3,
-      "nft_id": 1,
-      "bidder_name": "Bryan",
-      "bidder_handle": "@honNFT",
-      "bid_amount": 32.3222,
-      "image_url": "/images/bryan.png"
+      "name": "Bryan",
+      "username": "@jhonNFT",
+      "verified": true,
+      "bidAmount": "32.322,2 ETH",
+      "change": "-20%",
+      "avatar": "https://example.com/avatar3.png"
     },
     {
       "id": 4,
-      "nft_id": 1,
-      "bidder_name": "Casey",
-      "bidder_handle": "@honNFT",
-      "bid_amount": 32.3222,
-      "image_url": "/images/casey.png"
+      "name": "Casey",
+      "username": "@jhonNFT",
+      "verified": true,
+      "bidAmount": "32.322,2 ETH",
+      "change": "-20%",
+      "avatar": "https://example.com/avatar4.png"
+    },
+    {
+      "id": 5,
+      "name": "Casey",
+      "username": "@jhonNFT",
+      "verified": true,
+      "bidAmount": "32.322,2 ETH",
+      "change": "-20%",
+      "avatar": "https://example.com/avatar4.png"
     }
   ]
 }
