@@ -19,6 +19,7 @@ const Detail = ({route}) => {
       <TouchableOpacity style={DetailStyle.iconClose}>
         <Close />
       </TouchableOpacity>
+
       <ImageBackground
         source={require('../assets/images/bg.jpg')}
         style={DetailStyle.background}
@@ -27,6 +28,7 @@ const Detail = ({route}) => {
           source={require('../assets/images/NFT4.png')}
           style={DetailStyle.image}
         />
+
         <Text style={DetailStyle.number}>#2378</Text>
         <Text style={DetailStyle.title}>Cryptopus</Text>
 
@@ -54,7 +56,11 @@ const Detail = ({route}) => {
           </Text>
         </View>
       </ImageBackground>
-      <Lastbids />
+
+      {/* Lastbids bileşeni buraya eklendi */}
+      <View style={DetailStyle.bidsContainer}>
+        <Lastbids />
+      </View>
     </ScrollView>
   );
 };
