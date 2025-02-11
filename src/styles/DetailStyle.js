@@ -91,6 +91,29 @@ const DetailStyle = StyleSheet.create({
     fontSize: 14,
     lineHeight: 20,
   },
+  loadMoreButton: {
+    backgroundColor: '#000',
+    paddingVertical: 16,
+    paddingHorizontal: 100,
+    borderRadius: 30,
+    marginTop: 30,
+    marginBottom: 30,
+    borderWidth: 2,
+    borderColor: '#6E44FF',
+    alignItems: 'center',
+    justifyContent: 'center',
+    shadowColor: '#6E44FF',
+    shadowOffset: {width: 0, height: 4},
+    shadowOpacity: 0.1,
+    shadowRadius: 8,
+    textAlign: 'center',
+  },
+
+  followText: {
+    color: '#fff',
+    fontWeight: 'bold',
+    fontSize: 18,
+  },
 });
 
 export default DetailStyle;

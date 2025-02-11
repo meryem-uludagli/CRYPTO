@@ -6,6 +6,7 @@ import {
   Text,
   TouchableOpacity,
   ScrollView,
+  Button,
 } from 'react-native';
 import DetailStyle from '../styles/DetailStyle';
 import {Close} from '../assets/icons/Close';
@@ -17,7 +18,9 @@ const Detail = ({route, navigation}) => {
       {/* İçeriği kaydırmak için ScrollView */}
       <ScrollView
         contentContainerStyle={{flexGrow: 1}}
-        keyboardShouldPersistTaps="handled">
+        keyboardShouldPersistTaps="handled"
+        showsVerticalScrollIndicator={false} // Kaydırma çubuğunu gizler
+      >
         {/* Kapatma butonu */}
         <TouchableOpacity
           style={DetailStyle.iconClose}
@@ -66,14 +69,24 @@ const Detail = ({route, navigation}) => {
                 possimus illo pariatur sed minus!
               </Text>
             </View>
+
+            {/* Lastbids bileşenini düzgün hizalama */}
+            <View style={{flexGrow: 1}}>
+              <Lastbids />
+            </View>
+          </View>
+
+          <View style={{alignItems: 'center', marginBottom: 20}}>
+            <TouchableOpacity
+              style={DetailStyle.loadMoreButton}
+              onPress={() => {
+                /* Load More işlemi */
+              }}>
+              <Text style={DetailStyle.followText}>Loaded More</Text>
+            </TouchableOpacity>
           </View>
         </ImageBackground>
       </ScrollView>
-
-      {/* Teklifler bölümü (ScrollView dışına alınmalı) */}
-      <View style={DetailStyle.bidsContainer}>
-        <Lastbids />
-      </View>
     </View>
   );
 };

@@ -1,7 +1,7 @@
 import {configureStore} from '@reduxjs/toolkit';
 import bidsReducer from './slice/BidsSlice';
 
-const store = configureStore({
+export const store = configureStore({
   reducer: {
     bids: bidsReducer,
   },

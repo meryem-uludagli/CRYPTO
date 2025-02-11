@@ -6,8 +6,7 @@
       "username": "@jhonNFT",
       "verified": true,
       "bidAmount": "32.322,2 ETH",
-      "change": "-20%",
-      "avatar": "./assets/images/Avatar.png"
+      "change": "-20%"
     },
     {
       "id": 2,
@@ -15,8 +14,7 @@
       "username": "@jhonNFT",
       "verified": true,
       "bidAmount": "32.322,2 ETH",
-      "change": "-20%",
-      "avatar": "https://example.com/avatar2.png"
+      "change": "-20%"
     },
     {
       "id": 3,
@@ -24,8 +22,7 @@
       "username": "@jhonNFT",
       "verified": true,
       "bidAmount": "32.322,2 ETH",
-      "change": "-20%",
-      "avatar": "https://example.com/avatar3.png"
+      "change": "-20%"
     },
     {
       "id": 4,
@@ -33,8 +30,7 @@
       "username": "@jhonNFT",
       "verified": true,
       "bidAmount": "32.322,2 ETH",
-      "change": "-20%",
-      "avatar": "https://example.com/avatar4.png"
+      "change": "-20%"
     },
     {
       "id": 5,
@@ -42,8 +38,7 @@
       "username": "@jhonNFT",
       "verified": true,
       "bidAmount": "32.322,2 ETH",
-      "change": "-20%",
-      "avatar": "https://example.com/avatar4.png"
+      "change": "-20%"
     }
   ]
 }

@@ -1,13 +1,17 @@
-import {createSlice} from '@reduxjs/toolkit';
-import getBidsAction from '../action/BidsActions';
+import {createSlice, createAsyncThunk} from '@reduxjs/toolkit';
+import axios from 'axios';
+
+export const getBidsAction = createAsyncThunk(
+  'bids/getBidsAction',
+  async () => {
+    const response = await axios.get('http://localhost:3000/bids');
+    return response.data; // ✅ SADECE JSON DATA DÖNÜYOR!
+  },
+);
 
 const bidsSlice = createSlice({
   name: 'bids',
-  initialState: {
-    bids: [],
-    status: 'idle',
-    error: null,
-  },
+  initialState: {bids: [], status: 'idle', error: null},
   reducers: {},
   extraReducers: builder => {
     builder
@@ -16,7 +20,7 @@ const bidsSlice = createSlice({
       })
       .addCase(getBidsAction.fulfilled, (state, action) => {
         state.status = 'succeeded';
-        state.bids = action.payload;
+        state.bids = action.payload; // headers'ı kaydetme
       })
       .addCase(getBidsAction.rejected, (state, action) => {
         state.status = 'failed';

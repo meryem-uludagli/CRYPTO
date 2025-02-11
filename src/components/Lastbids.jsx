@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import {View, Text, FlatList, ActivityIndicator} from 'react-native';
+import {View, Text, FlatList, ActivityIndicator, Image} from 'react-native';
 import {useSelector, useDispatch} from 'react-redux';
 import getBidsAction from '../redux/action/BidsActions';
 import LastbidsStyle from '../styles/LastbidsStyle';
@@ -11,8 +11,6 @@ const Lastbids = () => {
   useEffect(() => {
     dispatch(getBidsAction({}));
   }, [dispatch]);
-
-  console.log('Redux Store Bids:', bids);
 
   if (status === 'loading') {
     return <ActivityIndicator size="large" color="#fff" />;
@@ -26,24 +24,41 @@ const Lastbids = () => {
     );
   }
 
+  const images = [
+    require('../assets/images/Avatar.png'),
+    require('../assets/images/Avatar2.png'),
+    require('../assets/images/Avatar3.png'),
+    require('../assets/images/Avatar5.png'),
+    require('../assets/images/Avatar5.png'),
+  ];
+
   return (
     <View style={LastbidsStyle.container}>
       <Text style={LastbidsStyle.title}>Last Bids</Text>
-      {bids.length === 0 ? (
+      {(bids ?? []).length === 0 ? (
         <Text style={{color: 'white', textAlign: 'center'}}>
           No bids available
         </Text>
       ) : (
         <FlatList
           data={bids}
+          horizontal
           keyExtractor={item => item.id.toString()}
-          renderItem={({item}) => (
+          contentContainerStyle={LastbidsStyle.bidList}
+          renderItem={({item, index}) => (
             <View style={LastbidsStyle.bidItem}>
-              <Text style={LastbidsStyle.bidder}>{item.bidder}</Text>
-              <Text style={LastbidsStyle.amount}>{item.amount} ETH</Text>
+              <Image
+                source={images[index % images.length]}
+                style={LastbidsStyle.avatar}
+              />
+              <View style={LastbidsStyle.bidInfo}>
+                <Text style={LastbidsStyle.bidder}>{item.name}</Text>
+                <Text style={LastbidsStyle.username}>{item.username}</Text>
+                <Text style={LastbidsStyle.amount}>{item.bidAmount}</Text>
+                <Text style={LastbidsStyle.change}>{item.change}</Text>
+              </View>
             </View>
           )}
-          nestedScrollEnabled={true}
         />
       )}
     </View>
