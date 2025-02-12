@@ -1,5 +1,12 @@
-import React, {useEffect} from 'react';
-import {View, Text, FlatList, ActivityIndicator, Image} from 'react-native';
+import React, {useEffect, useState} from 'react';
+import {
+  View,
+  Text,
+  FlatList,
+  ActivityIndicator,
+  Image,
+  TouchableOpacity,
+} from 'react-native';
 import {useSelector, useDispatch} from 'react-redux';
 import getBidsAction from '../redux/action/BidsActions';
 import LastbidsStyle from '../styles/LastbidsStyle';
@@ -7,6 +14,7 @@ import LastbidsStyle from '../styles/LastbidsStyle';
 const Lastbids = () => {
   const dispatch = useDispatch();
   const {bids, status, error} = useSelector(state => state.bids);
+  const [ethAmount, setEthAmount] = useState(8);
 
   useEffect(() => {
     dispatch(getBidsAction({}));
@@ -42,7 +50,6 @@ const Lastbids = () => {
       ) : (
         <FlatList
           data={bids}
-          horizontal
           keyExtractor={item => item.id.toString()}
           contentContainerStyle={LastbidsStyle.bidList}
           renderItem={({item, index}) => (
@@ -54,6 +61,9 @@ const Lastbids = () => {
               <View style={LastbidsStyle.bidInfo}>
                 <Text style={LastbidsStyle.bidder}>{item.name}</Text>
                 <Text style={LastbidsStyle.username}>{item.username}</Text>
+              </View>
+
+              <View style={LastbidsStyle.amountContainer}>
                 <Text style={LastbidsStyle.amount}>{item.bidAmount}</Text>
                 <Text style={LastbidsStyle.change}>{item.change}</Text>
               </View>
@@ -61,6 +71,21 @@ const Lastbids = () => {
           )}
         />
       )}
+      <View style={LastbidsStyle.footer}>
+        <View style={LastbidsStyle.ethControl}>
+          <TouchableOpacity
+            onPress={() => setEthAmount(prev => Math.max(0, prev - 1))}>
+            <Text style={LastbidsStyle.ethButton}>-</Text>
+          </TouchableOpacity>
+          <Text style={LastbidsStyle.ethAmount}>{ethAmount} ETH</Text>
+          <TouchableOpacity onPress={() => setEthAmount(prev => prev + 1)}>
+            <Text style={LastbidsStyle.ethButton}>+</Text>
+          </TouchableOpacity>
+        </View>
+        <TouchableOpacity style={LastbidsStyle.bidButton}>
+          <Text style={LastbidsStyle.bidButtonText}>Make a bid</Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 };

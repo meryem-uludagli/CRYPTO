@@ -93,8 +93,8 @@ const DetailStyle = StyleSheet.create({
   },
   loadMoreButton: {
     backgroundColor: '#000',
-    paddingVertical: 16,
-    paddingHorizontal: 100,
+    paddingVertical: 15,
+    paddingHorizontal: 110,
     borderRadius: 30,
     marginTop: 30,
     marginBottom: 30,

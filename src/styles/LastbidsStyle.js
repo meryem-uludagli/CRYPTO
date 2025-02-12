@@ -4,6 +4,7 @@ const LastbidsStyle = StyleSheet.create({
   container: {
     flex: 1,
     marginTop: 20,
+    paddingHorizontal: 16,
   },
   title: {
     color: 'white',
@@ -12,42 +13,24 @@ const LastbidsStyle = StyleSheet.create({
     marginBottom: 15,
     textAlign: 'left',
   },
-
   bidList: {
-    flexDirection: 'row',
-    flexWrap: 'wrap', // Bileşenleri sarmak için wrap kullanmak
-    justifyContent: 'space-between', // Elemanları daha düzgün yerleştir
+    flexDirection: 'column',
+    flexWrap: 'nowrap',
+    justifyContent: 'space-between',
   },
   bidItem: {
-    backgroundColor: '#1E1E2A', // Daha zengin bir arka plan rengi
+    backgroundColor: '#1E1E2A',
     flexDirection: 'row',
     alignItems: 'center',
-    padding: 16, // Daha geniş iç boşluk
-    borderRadius: 12, // Köşe yuvarlatma
-    marginBottom: 15, // Aralarındaki mesafeyi arttır
-    width: '100%', // Elemanlar tam genişlikte olacak şekilde ayarlandı
+    padding: 12,
+    borderRadius: 12,
+    marginBottom: 15,
+    width: '100%',
   },
-
-  avatar: {
-    width: 45, // Avatar boyutunu büyüt
-    height: 45,
-    borderRadius: 22.5, // Yuvarlak avatar
-    marginRight: 12, // Sağ boşluk
-  },
-  bidInfo: {
-    flex: 1,
-    justifyContent: 'space-between', // Sağ ve sol kısımlara yer bırakmak için
-  },
-  bidder: {
-    color: 'white',
-    fontSize: 16, // Daha okunabilir yazı boyutu
-    fontWeight: 'bold',
-    marginBottom: 4, // Kullanıcı ismini biraz daha belirgin yap
-  },
-  username: {
-    color: '#6E44FF', // Daha açık gri
-    fontSize: 14,
-    marginBottom: 4, // Altında biraz boşluk bırak
+  amountContainer: {
+    flexDirection: 'column',
+    alignItems: 'flex-start',
+    marginRight: 10,
   },
   amount: {
     color: '#fff',
@@ -57,6 +40,56 @@ const LastbidsStyle = StyleSheet.create({
   change: {
     fontSize: 14,
     color: '#FF5252',
+  },
+  bidInfo: {
+    flex: 1,
+    justifyContent: 'space-between',
+  },
+  bidder: {
+    color: 'white',
+    fontSize: 16,
+    fontWeight: 'bold',
+    marginBottom: 4,
+  },
+  username: {
+    color: '#6E44FF',
+    fontSize: 14,
+    marginBottom: 4,
+  },
+  footer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginTop: 20,
+    paddingHorizontal: 16,
+  },
+  ethControl: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: '#333',
+    paddingVertical: 6,
+    paddingHorizontal: 12,
+    borderRadius: 8,
+  },
+  ethButton: {
+    fontSize: 20,
+    color: 'white',
+    marginHorizontal: 10,
+  },
+  ethAmount: {
+    fontSize: 16,
+    color: 'white',
+  },
+  bidButton: {
+    backgroundColor: '#6E44FF',
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+    borderRadius: 8,
+  },
+  bidButtonText: {
+    color: 'white',
+    fontSize: 16,
+    fontWeight: '700',
   },
 });
 
