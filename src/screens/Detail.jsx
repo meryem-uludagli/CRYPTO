@@ -6,7 +6,6 @@ import {
   Text,
   TouchableOpacity,
   ScrollView,
-  FlatList,
 } from 'react-native';
 import DetailStyle from '../styles/DetailStyle';
 import {Close} from '../assets/icons/Close';

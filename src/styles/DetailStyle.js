@@ -1,4 +1,5 @@
 import {StyleSheet} from 'react-native';
+import {Colors} from '../theme/colors';
 
 const DetailStyle = StyleSheet.create({
   container: {
@@ -58,19 +59,19 @@ const DetailStyle = StyleSheet.create({
     fontSize: 14,
   },
   ownerName: {
-    color: '#fff',
+    color: Colors.WHITE,
     fontWeight: 'bold',
     fontSize: 16,
   },
   followButton: {
     marginLeft: 'auto',
-    backgroundColor: '#6E44FF',
+    backgroundColor: Colors.PURPLE,
     paddingVertical: 6,
     paddingHorizontal: 19,
     borderRadius: 15,
   },
   followText: {
-    color: '#fff',
+    color: Colors.WHITE,
     fontWeight: 'bold',
     fontSize: 16,
   },
@@ -99,10 +100,10 @@ const DetailStyle = StyleSheet.create({
     marginTop: 30,
     marginBottom: 30,
     borderWidth: 2,
-    borderColor: '#6E44FF',
+    borderColor: Colors.PURPLE,
     alignItems: 'center',
     justifyContent: 'center',
-    shadowColor: '#6E44FF',
+    shadowColor: Colors.PURPLE,
     shadowOffset: {width: 0, height: 4},
     shadowOpacity: 0.1,
     shadowRadius: 8,
@@ -110,7 +111,7 @@ const DetailStyle = StyleSheet.create({
   },
 
   followText: {
-    color: '#fff',
+    color: Colors.WHITE,
     fontWeight: 'bold',
     fontSize: 18,
   },
