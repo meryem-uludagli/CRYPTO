@@ -60,7 +60,6 @@ const FeedScreen = () => {
     <View style={FeedStyle.header}>
       <Header />
 
-      {/* Search Bar */}
       <TouchableOpacity style={FeedStyle.searchButton}>
         <View style={FeedStyle.searchInputContainer}>
           <TextInput
@@ -72,7 +71,6 @@ const FeedScreen = () => {
         </View>
       </TouchableOpacity>
 
-      {/* Categories */}
       <FlatList
         horizontal
         showsHorizontalScrollIndicator={false}

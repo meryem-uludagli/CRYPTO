@@ -8,11 +8,10 @@ const getBidsAction = createAsyncThunk(
     try {
       const response = await getRequest(BIDS, params);
 
-      // Sadece JSON datasını Redux'a kaydediyoruz
       const data = response?.data || response;
 
       console.log('Bids Data from API:', data);
-      return data; // ✅ Sadece JSON verisi dönüyoruz
+      return data;
     } catch (error) {
       console.error('Thunk Error in getBidsAction:', error.message || error);
       return rejectWithValue(error.message);

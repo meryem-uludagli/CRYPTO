@@ -5,7 +5,7 @@ export const getBidsAction = createAsyncThunk(
   'bids/getBidsAction',
   async () => {
     const response = await axios.get('http://localhost:3000/bids');
-    return response.data; // ✅ SADECE JSON DATA DÖNÜYOR!
+    return response.data;
   },
 );
 
@@ -20,7 +20,7 @@ const bidsSlice = createSlice({
       })
       .addCase(getBidsAction.fulfilled, (state, action) => {
         state.status = 'succeeded';
-        state.bids = action.payload; // headers'ı kaydetme
+        state.bids = action.payload;
       })
       .addCase(getBidsAction.rejected, (state, action) => {
         state.status = 'failed';

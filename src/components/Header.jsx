@@ -5,7 +5,6 @@ import FeedStyle from '../styles/FeedStyle';
 const Header = () => {
   return (
     <View>
-      {/* Logo */}
       <View style={FeedStyle.logoContainer}>
         <Image
           style={FeedStyle.logo}
@@ -13,7 +12,6 @@ const Header = () => {
         />
       </View>
 
-      {/* Hamburger Icon */}
       <View style={FeedStyle.hamburgerContainer}>
         <Hambug />
       </View>

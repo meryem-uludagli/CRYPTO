@@ -17,13 +17,13 @@ const CarteiraStyle = StyleSheet.create({
   containerheader: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginBottom: 20, // Daha az boşluk bırakıyoruz
+    marginBottom: 20,
   },
   contentContainer: {
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
-    marginTop: -10, // İçeriği yukarı taşıyoruz
+    marginTop: -10,
   },
   textContainer: {
     flexDirection: 'column',
@@ -46,9 +46,9 @@ const CarteiraStyle = StyleSheet.create({
   loadMoreButton: {
     backgroundColor: '#A294F9',
     paddingVertical: 15,
-    paddingHorizontal: 100, // Çok geniş olmasını önlüyoruz
+    paddingHorizontal: 100,
     borderRadius: 30,
-    marginBottom: 30, // 50 yerine 30 yaparak altındaki alanı daraltıyoruz
+    marginBottom: 30,
     alignItems: 'center',
     justifyContent: 'center',
     shadowColor: Colors.BLACK,
